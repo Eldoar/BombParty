@@ -113,6 +113,7 @@ function cambiarTurno() {
 function fin(marco, mid1, mid2, ganador) {
   explosion();
   setTimeout(function () {
+    if (vidasj1 === 0){
     document.getElementById("j2").style.display = "none";
     var jugadorGanador = ganador === jugador1 ? document.getElementById("avatar1") : document.getElementById("avatar2");
     jugadorGanador.src = ganador === jugador1 ? "Media/GanadorJ1.jpg" : "Media/GanadorJ2.jpg";
@@ -121,12 +122,24 @@ function fin(marco, mid1, mid2, ganador) {
     mid2.style.display = "none";
     letras1.style.visibility = "hidden";
     letras2.style.visibility = "hidden";
+    }
+
+    if (vidasj2 === 0){
     document.getElementById("j1").style.display = "none";
-  }, 545);
+    var jugadorGanador = ganador === jugador1 ? document.getElementById("avatar1") : document.getElementById("avatar2");
+    jugadorGanador.src = ganador === jugador1 ? "Media/GanadorJ1.jpg" : "Media/GanadorJ2.jpg";
+    marco.style.display = "none";
+    mid1.style.display = "none";
+    mid2.style.display = "none";
+    letras1.style.visibility = "hidden";
+    letras2.style.visibility = "hidden";
+    }
+    
+  }, 745);
   bgm.pause();
-  mostrarRanking();
   victoria.play();
   victoria.loop = true;
+  mostrarRanking();
 }
 
 function mostrarRanking() {

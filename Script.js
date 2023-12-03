@@ -94,7 +94,6 @@ function explosion() {
   bomba.style.height = "300px";
   bomba.style.width = "300px";
   bomba.style.position = "relative";
-  bomba.style.left = "-34%";
   setTimeout(function () {
     bomba.style.display = "none";
   }, duracion);
@@ -134,12 +133,11 @@ function fin(marco, mid1, mid2, ganador) {
     letras1.style.visibility = "hidden";
     letras2.style.visibility = "hidden";
     }
-    
+    mostrarRanking();
   }, 745);
   bgm.pause();
   victoria.play();
   victoria.loop = true;
-  mostrarRanking();
 }
 
 function mostrarRanking() {
